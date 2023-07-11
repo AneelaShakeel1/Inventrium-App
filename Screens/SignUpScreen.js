@@ -51,6 +51,7 @@ const SignUpScreen = (props) => {
         };
 
         await AsyncStorage.setItem("userData", JSON.stringify(userData));
+        await AsyncStorage.setItem("token", JSON.stringify(data.token));
 
         props.navigation.navigate("buyasubscription");
       } else {
