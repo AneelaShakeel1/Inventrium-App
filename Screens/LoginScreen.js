@@ -45,6 +45,7 @@ const LoginScreen = (props) => {
         };
 
         await AsyncStorage.setItem("userData", JSON.stringify(userData));
+        await AsyncStorage.setItem("token", JSON.stringify(data.token));
 
         props.navigation.navigate("home");
       } else {
