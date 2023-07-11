@@ -8,6 +8,8 @@ import AllCustomersScreen from "../Screens/AllCustomersScreen";
 import AllProductsScreen from "../Screens/AllProductsScreen";
 import AllOrdersScreen from '../Screens/AllOrdersScreen';
 import AllPaymentsScreen from "../Screens/AllPaymentsScreen";
+import AddingScreen from "../Screens/AddingScreen";
+import AddCustomerScreen from "../Screens/AddCustomerScreen";
 
 const Stack = createNativeStackNavigator();
 const Navigator = () => {
@@ -54,6 +56,16 @@ const Navigator = () => {
           options={{ headerShown: false }}
           name="allpayments"
           component={AllPaymentsScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="add"
+          component={AddingScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="addcustomer"
+          component={AddCustomerScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

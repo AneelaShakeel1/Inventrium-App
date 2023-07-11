@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, ScrollView, SafeAreaView } from "react-native";
 import Customer from "../Components/Customer";
-import colors from "../Constants/colors";
 
 const AllCustomersScreen = () => {
   return (
@@ -13,27 +12,23 @@ const AllCustomersScreen = () => {
         <View style={styles.customersBackground}>
           <Customer
             customerName="Aneela Shakeel"
-            productDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia"
+            productDescription="t FlowParserMixin.parseStatementLike"
           />
           <Customer
-            customerName="Hasham Uddin"
-            productDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia"
+            customerName="Aneela Shakeel"
+            productDescription="t FlowParserMixin.parseStatementLike"
           />
           <Customer
-            customerName="Yusra Aqeel"
-            productDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia"
+            customerName="Aneela Shakeel"
+            productDescription="t FlowParserMixin.parseStatementLike"
           />
           <Customer
-            customerName="Usama Khan"
-            productDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia"
+            customerName="Aneela Shakeel"
+            productDescription="t FlowParserMixin.parseStatementLike"
           />
           <Customer
-            customerName="Hammad Ali"
-            productDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia"
-          />
-          <Customer
-            customerName="Reena Shakeel"
-            productDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia"
+            customerName="Aneela Shakeel"
+            productDescription="t FlowParserMixin.parseStatementLike"
           />
         </View>
       </ScrollView>

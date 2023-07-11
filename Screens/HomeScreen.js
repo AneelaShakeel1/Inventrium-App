@@ -9,7 +9,12 @@ const HomeScreen = (props) => {
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView>
         <View style={styles.buttonBackground}>
-          <Button btnTitle="ADD" />
+          <Button
+            btnTitle="ADD"
+            onPress={() => {
+              props.navigation.navigate("add");
+            }}
+          />
         </View>
         <View>
           <Menu

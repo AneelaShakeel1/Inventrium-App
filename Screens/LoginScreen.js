@@ -15,6 +15,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const LoginScreen = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
     try {
@@ -23,7 +24,7 @@ const LoginScreen = (props) => {
       urlencoded.append("password", password);
 
       const response = await fetch(
-        "https://accountinglab-production.up.railway.app/api/v1/Login",
+        "https://scary-yak-costume.cyclic.app/api/v1/Login",
         {
           method: "POST",
           headers: {
@@ -37,19 +38,19 @@ const LoginScreen = (props) => {
         const data = await response.json();
         console.log(data);
 
-        // Store the login data in AsyncStorage
         const userData = {
           email,
           password,
+          id: data.data._id,
         };
+
         await AsyncStorage.setItem("userData", JSON.stringify(userData));
 
-        // Navigate to the next screen or perform other actions
-        // props.navigation.navigate("NextScreen");
+        props.navigation.navigate("home");
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
-        console.error("Signup failed:", errorMessage);
+        console.error("Login failed:", errorMessage);
       }
     } catch (error) {
       console.error(error);

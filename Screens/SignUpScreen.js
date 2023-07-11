@@ -28,7 +28,7 @@ const SignUpScreen = (props) => {
       urlencoded.append("password", password);
 
       const response = await fetch(
-        "https://accountinglab-production.up.railway.app/api/v1/Signup",
+        "https://scary-yak-costume.cyclic.app/api/v1/Signup",
         {
           method: "POST",
           headers: {
@@ -42,17 +42,17 @@ const SignUpScreen = (props) => {
         const data = await response.json();
         console.log(data);
 
-        // Store the signup data in AsyncStorage
         const userData = {
           firstName,
           lastName,
           email,
           password,
+          id: data.data._id,
         };
+
         await AsyncStorage.setItem("userData", JSON.stringify(userData));
 
-        // Navigate to the next screen or perform other actions
-        // props.navigation.navigate("NextScreen");
+        props.navigation.navigate("buyasubscription");
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
