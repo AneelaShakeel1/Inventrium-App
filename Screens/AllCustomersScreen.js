@@ -32,7 +32,6 @@ const AllCustomersScreen = () => {
 						'Content-Type': 'application/x-www-form-urlencoded',
 						'x-access-token': `${token}`,
 					},
-					body: urlencoded.toString(),
 				}
 			);
 
