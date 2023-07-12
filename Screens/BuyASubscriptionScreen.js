@@ -47,7 +47,7 @@ const BuyASubscriptionScreen = (props) => {
       urlencoded.append("user_id", userData.id);
 
       const response = await fetch(
-        "https://scary-yak-costume.cyclic.app/api/v1/create/subscription",
+        "https://fine-red-cygnet-suit.cyclic.app/api/v1/create/subscription",
         {
           method: "POST",
           headers: {

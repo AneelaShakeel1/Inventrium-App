@@ -7,7 +7,7 @@ import HomeScreen from "../Screens/HomeScreen";
 import AllCustomersScreen from "../Screens/AllCustomersScreen";
 import AllProductsScreen from "../Screens/AllProductsScreen";
 import AllOrdersScreen from '../Screens/AllOrdersScreen';
-import AllPaymentsScreen from "../Screens/AllPaymentsScreen";
+import AddProductScreen from '../Screens/AddProductScreen'
 import AddingScreen from "../Screens/AddingScreen";
 import AddCustomerScreen from "../Screens/AddCustomerScreen";
 
@@ -52,11 +52,7 @@ const Navigator = () => {
           name="allorders"
           component={AllOrdersScreen}
         />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="allpayments"
-          component={AllPaymentsScreen}
-        />
+        
         <Stack.Screen
           options={{ headerShown: false }}
           name="add"
@@ -66,6 +62,11 @@ const Navigator = () => {
           options={{ headerShown: false }}
           name="addcustomer"
           component={AddCustomerScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="addproduct"
+          component={AddProductScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -31,8 +31,7 @@ const AddCustomerScreen = (props) => {
     const userData = await getDataFromAsyncStorage("userData");
     const token = await getDataFromAsyncStorage("token");
 
-    console.log(userData,'userData')
-    console.log(token,'token')
+    
     try {
       const urlencoded = new URLSearchParams();
       urlencoded.append("customer_name", name);
@@ -40,7 +39,7 @@ const AddCustomerScreen = (props) => {
 
 
       const response = await fetch(
-        `https://scary-yak-costume.cyclic.app/api/v1/create/customer?user_id=${userData.id}`,
+        `https://fine-red-cygnet-suit.cyclic.app/api/v1/create/customer?user_id=${userData.id}`,
         {
           method: "POST",
           headers: {
@@ -65,7 +64,7 @@ const AddCustomerScreen = (props) => {
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);
-        console.error("Signup failed:", errorMessage);
+        console.error("create customer failed:", errorMessage);
 
         Alert.alert(
           "some thing went wrong"

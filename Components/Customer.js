@@ -16,12 +16,12 @@ const Customer = (props) => {
 
 const styles = StyleSheet.create({
 	mainContainer: {
-		height: 80,
+		height: 70,
 		width: '90%',
 		backgroundColor: colors.primary,
 		borderRadius: 25,
 		marginLeft: 17,
-		marginBottom: 15,
+		marginBottom: 10,
 	},
 	customerName: {
 		height: '30%',

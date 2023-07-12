@@ -13,6 +13,10 @@ const Product = (props) => {
         <Text style={styles.productDescription}>
           {props.productDescription}
         </Text>
+        <Text style={styles.productPrice}>{`Rs : ${props.productPrice}`}</Text>
+        <Text
+          style={styles.productPayment}
+        >{`Payment : ${props.productPayment}`}</Text>
       </View>
     </View>
   );
@@ -28,6 +32,15 @@ const styles = StyleSheet.create({
   },
   productDescription: {
     marginLeft: 15,
+  },
+  productPrice: {
+    marginLeft: 15,
+    color: colors.primary,
+    fontWeight: "bold",
+  },
+  productPayment: {
+    marginLeft: 15,
+    fontWeight: "bold",
   },
   productImageBackground: {
     height: "80%",

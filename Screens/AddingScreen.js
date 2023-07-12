@@ -8,9 +8,11 @@ const AddingScreen = (props) => {
        <AddingMenu 
        onPress={()=>props.navigation.navigate('addcustomer')}
        title="Add New Customer" />
-       <AddingMenu title="Add New Product" />
+       <AddingMenu
+       onPress={()=>props.navigation.navigate('addproduct')}
+        title="Add New Product" />
        <AddingMenu title="Add New Order" />
-       <AddingMenu title="Add New Payment" />
+      
     </View>
     
 

@@ -32,11 +32,7 @@ const HomeScreen = (props) => {
             Name="clipboard-outline"
             Title="Orders"
           />
-          <Menu
-            onPress={() => props.navigation.navigate("allpayments")}
-            Name="cash-outline"
-            Title="Payments"
-          />
+          
         </View>
       </ScrollView>
     </SafeAreaView>

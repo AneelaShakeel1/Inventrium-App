@@ -28,7 +28,7 @@ const SignUpScreen = (props) => {
       urlencoded.append("password", password);
 
       const response = await fetch(
-        "https://scary-yak-costume.cyclic.app/api/v1/Signup",
+        "https://fine-red-cygnet-suit.cyclic.app/api/v1/Signup",
         {
           method: "POST",
           headers: {

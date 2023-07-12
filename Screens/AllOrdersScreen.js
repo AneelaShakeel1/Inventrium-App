@@ -1,11 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, SafeAreaView, ScrollView } from "react-native";
 import Order from "../Components/Order";
-import Product from "../Components/Product";
-import Gift from "../assets/Images/Gift.jpg";
-import Perfume from "../assets/Images/Perfume.jpg";
-import Shampo from "../assets/Images/Shampo.jpg";
-import Mascara from "../assets/Images/Mascara.jpg";
+import ProductsImage from '../assets/Images/ProductsImage.jpg'
 
 
 const AllOrdersScreen = () => {
@@ -22,7 +18,7 @@ const AllOrdersScreen = () => {
             deliveryDate="Delivery Date:12/06/2023"
             payment="Payment:Delay"
             productPrice="Rs:1000"
-            image={Shampo}
+            image={ProductsImage}
             />
             <Order
             productHeading="Gift Box"
@@ -30,7 +26,7 @@ const AllOrdersScreen = () => {
             deliveryDate="Delivery Date:12/06/2023"
             payment="Payment:Delay"
             productPrice="Rs:1000"
-            image={Gift}
+            image={ProductsImage}
             />
             <Order
             productHeading="Mascara"
@@ -38,7 +34,7 @@ const AllOrdersScreen = () => {
             deliveryDate="Delivery Date:12/06/2023"
             payment="Payment:Delay"
             productPrice="Rs:1000"
-            image={Mascara}
+            image={ProductsImage}
             />
             <Order
             productHeading="Perfume"
@@ -46,7 +42,7 @@ const AllOrdersScreen = () => {
             deliveryDate="Delivery Date:12/06/2023"
             payment="Payment:Delay"
             productPrice="Rs:1000"
-            image={Perfume}
+            image={ProductsImage}
             />
             <Order
             
