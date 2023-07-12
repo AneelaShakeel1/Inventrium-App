@@ -1,10 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, SafeAreaView, ScrollView } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import Order from "../Components/Order";
-import ProductsImage from '../assets/Images/ProductsImage.jpg'
+import ProductsImage from "../assets/Images/ProductsImage.jpg";
 
+const getDataFromAsyncStorage = async (key) => {
+  try {
+    const data = await AsyncStorage.getItem(key);
+    if (data !== null) {
+      return JSON.parse(data);
+    } else {
+      console.log("data not found");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error retrieving data:", error);
+    return null;
+  }
+};
 
 const AllOrdersScreen = () => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
+  const fetchOrder = async () => {
+    try {
+      const userData = await getDataFromAsyncStorage("userData");
+      const token = await getDataFromAsyncStorage("token");
+
+      const response = await fetch(
+        `https://fine-red-cygnet-suit.cyclic.app/api/v1/fetch/order?user_id=${userData.id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "x-access-token": `${token}`,
+          },
+        }
+      );
+      if (response.ok) {
+        const responseData = await response.json();
+        if (responseData?.data.length > 0) {
+          setData(responseData.data);
+        } else {
+          setData([]);
+        }
+      } else {
+        if (response.status === 404) {
+          setError("Resource not found");
+        } else {
+          setError("Something went wrong");
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Network error");
+    }
+  };
+
+  useEffect(() => {
+    fetchOrder();
+  }, []);
   return (
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView>
@@ -12,43 +68,18 @@ const AllOrdersScreen = () => {
           <Text style={styles.headingTitle}>All Orders</Text>
         </View>
         <View>
+          {data.map((v, i) => (
             <Order
-            productHeading="Shampo"
-            customer="Customer:Hasham"
-            deliveryDate="Delivery Date:12/06/2023"
-            payment="Payment:Delay"
-            productPrice="Rs:1000"
-            image={ProductsImage}
+              key={i}
+              productHeading={v?.product_name}
+              customer={v?.customer_name}
+              deliveryDate={v?.delivery_date}
+              payment={v?.payment}
+              productPrice={v?.price}
+              image={ProductsImage}
             />
-            <Order
-            productHeading="Gift Box"
-            customer="Customer:Hasham"
-            deliveryDate="Delivery Date:12/06/2023"
-            payment="Payment:Delay"
-            productPrice="Rs:1000"
-            image={ProductsImage}
-            />
-            <Order
-            productHeading="Mascara"
-            customer="Customer:Hasham"
-            deliveryDate="Delivery Date:12/06/2023"
-            payment="Payment:Delay"
-            productPrice="Rs:1000"
-            image={ProductsImage}
-            />
-            <Order
-            productHeading="Perfume"
-            customer="Customer:Hasham"
-            deliveryDate="Delivery Date:12/06/2023"
-            payment="Payment:Delay"
-            productPrice="Rs:1000"
-            image={ProductsImage}
-            />
-            <Order
-            
-            />
+          ))}
         </View>
-
       </ScrollView>
     </SafeAreaView>
   );
@@ -59,7 +90,6 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     marginTop: 25,
-    
   },
   Heading: {
     height: 70,

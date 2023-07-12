@@ -11,11 +11,10 @@ const Order = (props) => {
       </View>
       <View style={styles.productTitles}>
         <Text style={styles.productHeading}>{props.productHeading}</Text>
-
         <Text style={styles.customer}>{props.customer}</Text>
         <Text style={styles.deliveryDate}>{props.deliveryDate}</Text>
-        <Text style={styles.payment}>{props.payment}</Text>
-        <Text style={styles.productPrice}>{props.productPrice}</Text>
+        <Text style={styles.payment}>{`Payment : ${props.payment}`}</Text>
+        <Text style={styles.productPrice}>{`Rs : ${props.productPrice}`}</Text>
       </View>
     </View>
   );
@@ -29,8 +28,6 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginLeft: 15,
     flexDirection: "row",
-    
-    
   },
 
   productImageBackground: {
@@ -38,7 +35,7 @@ const styles = StyleSheet.create({
     width: "30%",
     borderRadius: 25,
     marginRight: 20,
-    marginTop:5
+    marginTop: 5,
   },
   productTitles: {
     height: "100%",
@@ -58,21 +55,21 @@ const styles = StyleSheet.create({
   },
   customer: {
     fontWeight: "bold",
-    marginLeft:15
+    marginLeft: 15,
   },
   deliveryDate: {
     fontWeight: "bold",
-    marginLeft:15
+    marginLeft: 15,
   },
   payment: {
     fontWeight: "bold",
-    marginLeft:15
+    marginLeft: 15,
   },
   productPrice: {
     fontWeight: "bold",
-    color:colors.primary,
-    marginLeft:15,
-    fontSize:18
+    color: colors.primary,
+    marginLeft: 15,
+    fontSize: 15,
   },
 });
 export default Order;

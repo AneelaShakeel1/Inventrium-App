@@ -10,6 +10,7 @@ import AllOrdersScreen from '../Screens/AllOrdersScreen';
 import AddProductScreen from '../Screens/AddProductScreen'
 import AddingScreen from "../Screens/AddingScreen";
 import AddCustomerScreen from "../Screens/AddCustomerScreen";
+import AddOrderScreen from "../Screens/AddOrderScreen"
 
 const Stack = createNativeStackNavigator();
 const Navigator = () => {
@@ -67,6 +68,11 @@ const Navigator = () => {
           options={{ headerShown: false }}
           name="addproduct"
           component={AddProductScreen}
+        />
+         <Stack.Screen
+          options={{ headerShown: false }}
+          name="addorder"
+          component={AddOrderScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

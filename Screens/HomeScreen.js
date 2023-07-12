@@ -24,13 +24,23 @@ const HomeScreen = (props) => {
           />
           <Menu
             onPress={() => props.navigation.navigate("allproducts")}
-            Name="cart-outline"
+            Name="md-basket"
             Title="Products"
           />
           <Menu
             onPress={() => props.navigation.navigate("allorders")}
-            Name="clipboard-outline"
+            Name="md-cart"
             Title="Orders"
+          />
+           <Menu
+            onPress={() => props.navigation.navigate("allorders")}
+            Name="md-receipt"
+            Title="Account Receivable"
+          />
+           <Menu
+            onPress={() => props.navigation.navigate("allorders")}
+            Name="md-wallet"
+            Title="Account Payable"
           />
           
         </View>
