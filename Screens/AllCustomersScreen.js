@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   Heading: {
-    height: "5%",
+   height: 70,
   },
   headingTitle: {
     fontWeight: "bold",

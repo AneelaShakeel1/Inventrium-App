@@ -77,6 +77,7 @@ const AllProductsScreen = () => {
               <Product
                 key={i}
                 productHeading={v?.product_name}
+                productSellerName={v?.seller_name}
                 productDescription={v?.description}
                 productPrice={v?.price}
                 productPayment={v?.payment}

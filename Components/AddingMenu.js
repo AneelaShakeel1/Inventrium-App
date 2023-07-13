@@ -14,12 +14,13 @@ const AddingMenu = (props) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 70,
+    height: 80,
     width: "90%",
     backgroundColor: colors.primary,
     borderRadius: 20,
     marginLeft: 17,
-    marginTop: 20,
+    marginTop: 30,
+    
     
   },
   title: {
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 15,
     marginLeft: 25,
+    
   },
 });
 

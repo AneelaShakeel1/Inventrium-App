@@ -10,28 +10,32 @@ const Product = (props) => {
       </View>
       <View style={styles.productTitles}>
         <Text style={styles.productHeading}>{props.productHeading}</Text>
+        <Text style={styles.productSellerName}>{props.productSellerName}</Text>
+        <Text
+          style={styles.productPayment}
+        >{`Payment : ${props.productPayment}`}</Text>
         <Text style={styles.productDescription}>
           {props.productDescription}
         </Text>
         <Text style={styles.productPrice}>{`Rs : ${props.productPrice}`}</Text>
-        <Text
-          style={styles.productPayment}
-        >{`Payment : ${props.productPayment}`}</Text>
       </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 90,
+    height: 130,
     width: "90%",
     marginBottom: 20,
     borderRadius: 25,
     marginLeft: 15,
     flexDirection: "row",
+   
+    
   },
   productDescription: {
     marginLeft: 15,
+    fontWeight: "bold",
   },
   productPrice: {
     marginLeft: 15,
@@ -39,6 +43,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   productPayment: {
+    marginLeft: 15,
+    fontWeight: "bold",
+  },
+  productSellerName: {
     marginLeft: 15,
     fontWeight: "bold",
   },

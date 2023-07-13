@@ -32,6 +32,7 @@ const AddProductScreen = (props) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [payment, setPayment] = useState("");
+  const [sellerName, setSellerName] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async () => {
@@ -44,6 +45,7 @@ const AddProductScreen = (props) => {
       urlencoded.append("description", description);
       urlencoded.append("price", price);
       urlencoded.append("payment", payment);
+      urlencoded.append("seller_name", sellerName);
 
       const response = await fetch(
         `https://fine-red-cygnet-suit.cyclic.app/api/v1/create/product?user_id=${userData.id}`,
@@ -90,6 +92,11 @@ const AddProductScreen = (props) => {
               placeHolder="Enter Product Name"
             />
             <MyInput
+              onChangeText={(e) => setSellerName(e)}
+              value={sellerName}
+              placeHolder="Enter Product Seller Name"
+            />
+            <MyInput
               onChangeText={(e) => setDescription(e)}
               value={description}
               placeHolder="Enter Product Description"
@@ -104,6 +111,7 @@ const AddProductScreen = (props) => {
               value={payment}
               placeHolder="Enter Product payment status"
             />
+            
             <Button onPress={handleSubmit} btnTitle="Create Product" />
           </View>
         </View>

@@ -22,7 +22,7 @@ const Order = (props) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 100,
+    height: 130,
     width: "90%",
     marginBottom: 20,
     borderRadius: 25,

@@ -33,12 +33,12 @@ const HomeScreen = (props) => {
             Title="Orders"
           />
            <Menu
-            onPress={() => props.navigation.navigate("allorders")}
+            onPress={() => props.navigation.navigate("accountreceivable")}
             Name="md-receipt"
             Title="Account Receivable"
           />
            <Menu
-            onPress={() => props.navigation.navigate("allorders")}
+            onPress={() => props.navigation.navigate("accountpayable")}
             Name="md-wallet"
             Title="Account Payable"
           />

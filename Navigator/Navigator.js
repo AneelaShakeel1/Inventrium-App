@@ -6,11 +6,13 @@ import BuyASubscriptionScreen from "../Screens/BuyASubscriptionScreen";
 import HomeScreen from "../Screens/HomeScreen";
 import AllCustomersScreen from "../Screens/AllCustomersScreen";
 import AllProductsScreen from "../Screens/AllProductsScreen";
-import AllOrdersScreen from '../Screens/AllOrdersScreen';
-import AddProductScreen from '../Screens/AddProductScreen'
+import AllOrdersScreen from "../Screens/AllOrdersScreen";
+import AddProductScreen from "../Screens/AddProductScreen";
 import AddingScreen from "../Screens/AddingScreen";
 import AddCustomerScreen from "../Screens/AddCustomerScreen";
-import AddOrderScreen from "../Screens/AddOrderScreen"
+import AddOrderScreen from "../Screens/AddOrderScreen";
+import AccountReceivable from "../Screens/AccountReceivable"
+import AccountPayable from "../Screens/AccountPayable";
 
 const Stack = createNativeStackNavigator();
 const Navigator = () => {
@@ -48,12 +50,12 @@ const Navigator = () => {
           name="allproducts"
           component={AllProductsScreen}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
           name="allorders"
           component={AllOrdersScreen}
         />
-        
+
         <Stack.Screen
           options={{ headerShown: false }}
           name="add"
@@ -69,10 +71,21 @@ const Navigator = () => {
           name="addproduct"
           component={AddProductScreen}
         />
-         <Stack.Screen
+        <Stack.Screen
           options={{ headerShown: false }}
           name="addorder"
           component={AddOrderScreen}
+        />
+        
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="accountreceivable"
+          component={AccountReceivable}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="accountpayable"
+          component={AccountPayable}
         />
       </Stack.Navigator>
     </NavigationContainer>
