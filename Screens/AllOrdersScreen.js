@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, SafeAreaView, ScrollView } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Order from "../Components/Order";
-import ProductsImage from "../assets/Images/ProductsImage.jpg";
+import ProductsImage from "../assets/Images/ProductsImage.png";
 
 const getDataFromAsyncStorage = async (key) => {
   try {

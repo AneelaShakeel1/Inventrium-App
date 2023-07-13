@@ -38,16 +38,21 @@ const LoginScreen = (props) => {
         const data = await response.json();
         console.log(data);
 
-        const userData = {
-          email,
-          password,
-          id: data.data._id,
-        };
+        if (data.data.isValid == true) {
+          const userData = {
+            email,
+            password,
+            id: data.data._id,
+          };
+          await AsyncStorage.setItem("userData", JSON.stringify(userData));
+          await AsyncStorage.setItem("token", JSON.stringify(data.token));
 
-        await AsyncStorage.setItem("userData", JSON.stringify(userData));
-        await AsyncStorage.setItem("token", JSON.stringify(data.token));
-
-        props.navigation.navigate("home");
+          props.navigation.navigate("home");
+          alert("Login successfully");
+        } else {
+          props.navigation.navigate("buyasubscription");
+          alert("Subscription Required");
+        }
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);

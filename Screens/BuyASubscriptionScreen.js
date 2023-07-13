@@ -75,6 +75,7 @@ const BuyASubscriptionScreen = (props) => {
         );
 
         props.navigation.navigate("home");
+        alert("Subscribed Successfully")
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);

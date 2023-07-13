@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import Button from "./Button";
 import colors from "../Constants/colors";
 
 const Order = (props) => {
@@ -22,7 +21,7 @@ const Order = (props) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 130,
+    height: 120,
     width: "90%",
     marginBottom: 20,
     borderRadius: 25,

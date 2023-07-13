@@ -54,6 +54,7 @@ const SignUpScreen = (props) => {
         await AsyncStorage.setItem("token", JSON.stringify(data.token));
 
         props.navigation.navigate("buyasubscription");
+        alert("Signed Up Successfully ");
       } else {
         const errorMessage = await response.text();
         setError(errorMessage);

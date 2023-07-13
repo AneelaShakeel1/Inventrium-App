@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, ScrollView, SafeAreaView } from "react-native";
 import Product from "../Components/Product";
-import ProductsImage from '../assets/Images/ProductsImage.jpg'
+import ProductsImage from '../assets/Images/ProductsImage.png'
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const getDataFromAsyncStorage = async (key) => {
